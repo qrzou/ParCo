@@ -145,6 +145,19 @@ Our model is trained on a single A100-40G GPU. The code was tested on Python 3.7
     CUDA and cuDNN should be installed first. We use following version:
     `CUDA: 11.3` and `cuDNN: 8.2.0`.
 
+  - Install CUDA 11.3:
+    1. Download from [here](https://developer.nvidia.com/cuda-11-3-1-download-archive)
+       (we recommend to choose installer type as `runfile (local)`.
+    1. Install the runfile using the scripts given by the official website.
+    1. Before running our code, check if your CUDA environment is linked to CUDA 11.3 (run `nvcc --version` to check). 
+    If the version is not 11.3, you need to add the CUDA path into your environment by `export PATH=/usr/local/cuda-11.3/bin:$PATH`,
+    then check the version again.
+    
+  - Install cuDNN 8.2.0:
+    1. Download from [here](https://developer.nvidia.com/rdp/cudnn-archive) (select `8.2.0 for CUDA 11.X` and `cuDNN Library for Linux/Windows` according to your system)
+    1. Install the cuDNN according to this [guide](https://docs.nvidia.com/deeplearning/cudnn/archives/cudnn-820/install-guide/index.html#installlinux-tar).
+    Refer to Section `2.3.1. Tar File Installation` as we download tar file at previous stage.
+
 
 - Conda environment
   
