@@ -8,7 +8,7 @@ Pytorch implementation of paper [ParCo: Part-Coordinating Text-to-Motion Synthes
 
 [![Paper](http://img.shields.io/badge/Paper-arxiv.2403.18512-FF6B6B.svg)](https://arxiv.org/abs/2403.18512)
 [![Language](http://img.shields.io/badge/Language-中文-FFD93D.svg)](./docs/README_zh.md)
-
+[![Colab](http://img.shields.io/badge/Demo-Open%20in%20Colab-D6EAF8.svg)](https://colab.research.google.com/drive/1mGYpqIoB7BWgvfm7xxTZ4bUYPaeBRn2D?usp=sharing)
 
 <p align="center">
 <table>
@@ -68,10 +68,6 @@ Pytorch implementation of paper [ParCo: Part-Coordinating Text-to-Motion Synthes
 </p>
 
 
-
-
-👉 Try our [quick start demo (TODO)]() to reproduce the results of ParCo in the table above.
-
 If our project is helpful for your research, please consider **starring** this repo and **citing** our paper:
 ```
 @article{zou2024parco,
@@ -124,7 +120,19 @@ Time and GPU memory consumed for training (single A100 GPU):
 
 ## 1. Quick Start Demo
 
-TODO
+👉 Try our [quick start demo](https://colab.research.google.com/drive/1mGYpqIoB7BWgvfm7xxTZ4bUYPaeBRn2D?usp=sharing) !
+
+Our demo shows how to prepare the environment and inference with ParCo.
+You can also conveniently explore our ParCo.
+
+If you wish to reproduce the visualization results of ParCo, 
+we recommend installing the environment locally following our tutorial and reproducing it there 
+(as results differ between ). 
+This is likely due to differences in the CUDA environment and GPU between Colab and local training/testing.
+
+<p align="center">
+<img src="docs/imgs/demo_screenshot.png" width="90%" />
+</p>
 
 ## 2. Installation
 
@@ -425,7 +433,7 @@ Render SMPL mesh:
 
 
 ## TODO
-- [ ] Add Demo
+- [x] Add Demo
 - [ ] Visualization tutorial for rendered motion
 - [ ] README_zh.md
 
