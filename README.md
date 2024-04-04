@@ -115,8 +115,8 @@ Time and GPU memory consumed for training (single A100 GPU):
 - [3. Train ParCo](#3-train-parco)
 - [4. Evaluation](#4-evaluation)
 - [5. Pre-trained Models](#5-pre-trained-models)
-- [6. ParCo with up&low body partition](6-parco-with-up-low-body-partition)
-- [7. Visualize Motion](7-visualize-motion)
+- [6. ParCo with up&low body partition](#6-parco-with-up-low-body-partition)
+- [7. Visualize Motion](#7-visualize-motion)
 - [TODO](#todo)
 - [Acknowledgement](#acknowledgement)
 
