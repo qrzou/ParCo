@@ -127,8 +127,8 @@ You can also conveniently explore our ParCo.
 
 If you wish to reproduce the visualization results of ParCo, 
 we recommend installing the environment locally following our tutorial and reproducing it there 
-(as results differ between ). 
-This is likely due to differences in the CUDA environment and GPU between Colab and local training/testing.
+(as results differ between Colab and local runs). 
+This is likely due to differences in GPU and CUDA environment between Colab and local training/testing.
 
 <p align="center">
 <img src="docs/imgs/demo_screenshot.png" width="90%" />
