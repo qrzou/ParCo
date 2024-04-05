@@ -138,12 +138,12 @@ This is likely due to differences in GPU and CUDA environment between Colab and 
 
 ### 2.1. Environment
 
-Our model is trained on a single A100-40G GPU. The code was tested on Python 3.7.11, PyTorch 1.10.1, and CUDA 11.3.
+Our model is trained on a single A100-40G GPU. The code was tested on Python 3.7.11, PyTorch 1.10.1, and CUDA 11.3.1.
 
 - CUDA & cuDNN (cuDNN may not be necessary)
 
     CUDA and cuDNN should be installed first. We use following version:
-    `CUDA: 11.3` and `cuDNN: 8.2.0`.
+    `CUDA: 11.3.1` and `cuDNN: 8.2.0`.
 
   - Install CUDA 11.3:
     1. Download from [here](https://developer.nvidia.com/cuda-11-3-1-download-archive)
