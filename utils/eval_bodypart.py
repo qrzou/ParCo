@@ -461,7 +461,7 @@ def evaluation_transformer_test_batch(out_dir, val_loader, net, trans, logger, w
 
     for batch in tqdm(val_loader):
 
-        word_embeddings, pos_one_hots, clip_text, sent_len, pose, m_length, token, name, parts = batch
+        word_embeddings, pos_one_hots, clip_text, sent_len, pose, m_length, token, sample_name, parts = batch
         bs, seq = pose.shape[:2]
         num_joints = 21 if pose.shape[-1] == 251 else 22
 
@@ -533,13 +533,13 @@ def evaluation_transformer_test_batch(out_dir, val_loader, net, trans, logger, w
                     pred_xyz = recover_from_ric(torch.from_numpy(pred_denorm).float().cuda(), num_joints)
 
                     if savenpy:
-                        np.save(os.path.join(out_dir, name[k]+'_pred.npy'), pred_xyz.detach().cpu().numpy())
+                        np.save(os.path.join(out_dir, sample_name[k]+'_pred.npy'), pred_xyz.detach().cpu().numpy())
 
                     if draw:
                         if i == 0:
                             draw_pred.append(pred_xyz)
                             draw_text_pred.append(clip_text[k])
-                            draw_name.append(name[k])
+                            draw_name.append(sample_name[k])
 
             et_pred, em_pred = eval_wrapper.get_co_embeddings(word_embeddings, pos_one_hots, sent_len, pred_pose_eval, pred_len)
 
@@ -558,7 +558,7 @@ def evaluation_transformer_test_batch(out_dir, val_loader, net, trans, logger, w
 
                     if savenpy:
                         for j in range(bs):
-                            np.save(os.path.join(out_dir, name[j]+'_gt.npy'), pose_xyz[j][:m_length[j]].unsqueeze(0).cpu().numpy())
+                            np.save(os.path.join(out_dir, sample_name[j]+'_gt.npy'), pose_xyz[j][:m_length[j]].unsqueeze(0).cpu().numpy())
 
                     if draw:
                         for j in range(bs):

@@ -120,7 +120,9 @@ Time and GPU memory consumed for training (single A100 GPU):
 
 ## 1. Quick Start Demo
 
-👉 Try our [quick start demo](https://colab.research.google.com/drive/1mGYpqIoB7BWgvfm7xxTZ4bUYPaeBRn2D?usp=sharing) !
+### 1.1. Colab Demo
+
+👉 Try our [Colab demo](https://colab.research.google.com/drive/1mGYpqIoB7BWgvfm7xxTZ4bUYPaeBRn2D?usp=sharing) !
 
 Our demo shows how to prepare the environment and inference with ParCo.
 You can also conveniently explore our ParCo.
@@ -131,7 +133,26 @@ we recommend installing the environment locally following our tutorial and repro
 This is likely due to differences in GPU and CUDA environment between Colab and local training/testing.
 
 <p align="center">
-<img src="docs/imgs/demo_screenshot.png" width="90%" />
+<img src="docs/imgs/demo_screenshot.png" width="40%" />
+</p>
+
+### 1.2. Local Quick Inference
+
+After the installation completed, 
+you can directly generate motion (.gif format) with your own text input as following:
+
+```
+CUDA_VISIBLE_DEVICES=0 python visualize/infer_motion_npy.py \
+--eval-exp-dir output/00001-t2m/VQVAE-ParCo-t2m-default/00000-Trans-ParCo-default \
+--select-ckpt fid \
+--infer-mode userinput \
+--input-text 'an idol trainee is dancing like a basketball dribbling.' \
+--skip-path-check
+```
+The generated motion visual sample is saved as `output/visualize/XXXXX-userinput/skeleton_viz.gif`.
+
+<p align="center">
+<img src="docs/imgs/demo_local_infer.gif" width="30%" />
 </p>
 
 ## 2. Installation
@@ -156,7 +177,7 @@ Our model is trained on a single A100-40G GPU. The code was tested on Python 3.7
   - Install cuDNN 8.2.0:
     1. Download from [here](https://developer.nvidia.com/rdp/cudnn-archive) (select `8.2.0 for CUDA 11.X` and `cuDNN Library for Linux/Windows` according to your system)
     1. Install the cuDNN according to this [guide](https://docs.nvidia.com/deeplearning/cudnn/archives/cudnn-820/install-guide/index.html#installlinux-tar).
-    Refer to Section `2.3.1. Tar File Installation` as we download tar file at previous stage.
+    Refer to Section `2.3.1. Tar File Installation` since we download tar file at previous stage.
 
 
 - Conda environment
@@ -186,12 +207,12 @@ Our model is trained on a single A100-40G GPU. The code was tested on Python 3.7
 
   - Install packages for rendering the motion (optional)
     ```
-    sudo sh dataset/prepare/download_smpl.sh
+    bash dataset/prepare/download_smpl.sh
     conda install -c menpo osmesa
     conda install h5py
-    conda install -c conda-forge shapely pyrender trimesh mapbox_earcut
+    conda install -c conda-forge shapely pyrender trimesh==3.22.5 mapbox_earcut
     ```
-    If you are using proxy to access Google Drive, use `sudo sh dataset/prepare/use_proxy/download_smpl.sh` for downloading.
+    If you are using proxy to access Google Drive, use `bash dataset/prepare/use_proxy/download_smpl.sh` for downloading.
     Default proxy port in the script is set to `1087`, you can modify it to your own proxy port.
 
 ### 2.2. Feature extractors
@@ -441,13 +462,53 @@ Details
 ## 7. Visualize Motion
 
 Render SMPL mesh:
-- Option-1: use the tool provided by [T2M-GPT](https://github.com/Mael-zys/T2M-GPT)
-- Option-2: refer to [MLD](https://github.com/chenfengye/motion-latent-diffusion?tab=readme-ov-file)
+
+- Option-1: Use the tool provided by us (some adopted from [T2M-GPT](https://github.com/Mael-zys/T2M-GPT)):
+  1. Generate motions in `.npy` format:
+  
+     The generated results will be saved under `output/visualize/`. 
+  
+     Choose your preferred mode:
+     - input text by user:
+       ```
+       CUDA_VISIBLE_DEVICES=0 python visualize/infer_motion_npy.py \
+       --eval-exp-dir output/ParCo_official_HumanML3D/VQVAE-ParCo-t2m-default/00000-Trans-ParCo-default \
+       --select-ckpt fid \
+       --infer-mode userinput \
+       --input-text 'an idol trainee is dancing like a basketball dribbling.' \
+       --skip-path-check
+       ```
+     - test set as input:
+       ```
+       CUDA_VISIBLE_DEVICES=0 python visualize/infer_motion_npy.py \
+       --eval-exp-dir output/ParCo_official_HumanML3D/VQVAE-ParCo-t2m-default/00000-Trans-ParCo-default \
+       --select-ckpt fid \
+       --infer-mode testset \
+       --skip-path-check
+       ```
+  1. Render the `.npy` motion file:
+  
+     Remember to install the packages for rendering (in 2.1. Environment).
+     Set `--filedir` to your own motion file directory. 
+     
+     The rendered result will be saved at the same directory with your motion file under `rendered_motion` folder.
+     For example:
+  
+     ```
+     CUDA_VISIBLE_DEVICES=0 python visualize/render_final.py --filedir output/visualize/00000-userinput/motion.npy 
+     ```
+     You will get a rendered `.gif` motion like this:
+     <p align="center">
+       <img src="docs/imgs/rendered_motion_example.gif" width="20%" />
+     </p>
+  
+
+- Option-2 (Recommended): refer to [MLD](https://github.com/chenfengye/motion-latent-diffusion?tab=readme-ov-file).
 
 
 ## TODO
 - [x] Add Demo
-- [ ] Visualization tutorial for rendered motion
+- [x] Visualization tutorial for rendered motion
 - [ ] README_zh.md
 
 

@@ -27,7 +27,7 @@ warnings.filterwarnings('ignore')
 parser = argparse.ArgumentParser(description='Evaluate the real motion',
                                  add_help=True,
                                  formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument('--eval-exp-dir', type=str, help='Which dataset for eval')
+parser.add_argument('--eval-exp-dir', type=str, help='The trained transformer experiment directory to be evaluated.')
 parser.add_argument("--skip-mmod", action='store_true', help="Skip evaluating MultiModality")
 parser.add_argument('--select-ckpt', type=str, help='Select which ckpt for use: [last, fid, div, top1, matching]')
 parser.add_argument("--fixed-seed", action='store_true', help="Use the same seed used in training, otherwise set the seed randomly")
