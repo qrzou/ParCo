@@ -7,8 +7,8 @@
 Pytorch implementation of paper [ParCo: Part-Coordinating Text-to-Motion Synthesis](https://arxiv.org/abs/2403.18512).
 
 [![Paper](http://img.shields.io/badge/Paper-arxiv.2403.18512-FF6B6B.svg)](https://arxiv.org/abs/2403.18512)
-[![Language](http://img.shields.io/badge/Language-中文-FFD93D.svg)](./docs/README_zh.md)
-[![Colab](http://img.shields.io/badge/Demo-Open%20in%20Colab-D6EAF8.svg)](https://colab.research.google.com/drive/1mGYpqIoB7BWgvfm7xxTZ4bUYPaeBRn2D?usp=sharing)
+[![Language](http://img.shields.io/badge/Language-中文-D6EAF8.svg)](./docs/README_zh.md)
+[![Colab](http://img.shields.io/badge/Demo-Open%20in%20Colab-FFD93D.svg)](https://colab.research.google.com/drive/1mGYpqIoB7BWgvfm7xxTZ4bUYPaeBRn2D?usp=sharing)
 
 <p align="center">
 <table>
