@@ -497,7 +497,7 @@ Render SMPL mesh:
      ```
      CUDA_VISIBLE_DEVICES=0 python visualize/render_final.py --filedir output/visualize/00000-userinput/motion.npy 
      ```
-     You will get a rendered `.gif` motion like this:
+     You will get a rendered `.gif` motion. For example:
      <p align="center">
        <img src="docs/imgs/rendered_motion_example.gif" width="20%" />
      </p>
