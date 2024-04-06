@@ -159,7 +159,8 @@ The generated motion visual sample is saved as `output/visualize/XXXXX-userinput
 
 ### 2.1. Environment
 
-Our model is trained on a single A100-40G GPU. The code was tested on Python 3.7.11, PyTorch 1.10.1, and CUDA 11.3.1.
+Our model was trained and tested on a single A100-40G GPU
+with software environment: Python 3.7.11, PyTorch 1.10.1, CUDA 11.3.1, cuDNN 8.2.0, Ubuntu 20.04.
 
 - CUDA & cuDNN (cuDNN may not be necessary)
 
