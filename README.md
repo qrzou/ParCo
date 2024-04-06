@@ -370,6 +370,18 @@ CUDA_VISIBLE_DEVICES=0 python eval_ParCo_trans.py \
 Our pretrained models are provided at [[Google Drive]](https://drive.google.com/drive/folders/1MNiA76kChAPVZyhiwHFpOcoqz1mcZIhL?usp=share_link).
 Extract the .zip files and put them under `output` folder for evaluation.
 
+You can also run following scripts to prepare the pretrained models:
+```bash
+mkdir output
+cd output
+gdown 1jmuX3xDEku3e_ldnTUm192eQRS3EEw99
+unzip ParCo_official_model_weights_HumanML3D.zip
+cd ..
+```
+
+For model trained on KIT-ML, replace the gdown downloading command with `gdown 1_D9vqIhMv5-oz6qfiTGKjsxhS5DNP0PB` 
+and unzip command with `unzip ParCo_official_model_weights_KIT-ML.zip`.
+
 Since we renamed the directory of pre-trained models, remember to set `--skip-path-check` when evaluating our Part-Coordinated transformer. For example: 
 
 ```bash
