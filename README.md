@@ -143,7 +143,7 @@ you can directly generate motion (.gif format) with your own text input as follo
 
 ```
 CUDA_VISIBLE_DEVICES=0 python visualize/infer_motion_npy.py \
---eval-exp-dir output/00001-t2m/VQVAE-ParCo-t2m-default/00000-Trans-ParCo-default \
+--eval-exp-dir output/ParCo_official_HumanML3D/VQVAE-ParCo-t2m-default/00000-Trans-ParCo-default \
 --select-ckpt fid \
 --infer-mode userinput \
 --input-text 'an idol trainee is dancing like a basketball dribbling.' \
