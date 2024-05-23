@@ -522,7 +522,7 @@ Render SMPL mesh:
 ## TODO
 - [x] Add Demo
 - [x] Visualization tutorial for rendered motion
-- [ ] README_zh.md
+- [x] README_zh.md
 
 
 ## Acknowledgement
