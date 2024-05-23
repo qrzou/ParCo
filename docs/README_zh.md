@@ -14,7 +14,7 @@ Pytorch实现论文： [ParCo: Part-Coordinating Text-to-Motion Synthesis](https
 <table>
 
   <tr>
-    <th colspan="4">文本: "一个人正开怀大笑，并用左手做出了愉快的动作。"</th>
+    <th colspan="4">文本: "a person is having a hearty laugh and makes a jovial motion with their left hand."</th>
   </tr>
   <tr>
     <th>🔥ParCo (Ours)🔥</th>
@@ -31,7 +31,7 @@ Pytorch实现论文： [ParCo: Part-Coordinating Text-to-Motion Synthesis](https
 
 
   <tr>
-    <th colspan="4">文本: "单脚站立和跳跃"</th>
+    <th colspan="4">文本: "standing on one leg and hopping."</th>
   </tr>
   <tr>
     <th>🔥ParCo (Ours)🔥</th>
@@ -48,7 +48,7 @@ Pytorch实现论文： [ParCo: Part-Coordinating Text-to-Motion Synthesis](https
 
 
   <tr>
-    <th colspan="4">文本: "一个男人后退一步，捡起某物放到他的头旁，然后放回原处。"</th>
+    <th colspan="4">文本: "a man steps back, picks something up and put it to his head and then puts it back."</th>
   </tr>
   <tr>
     <th>🔥ParCo (Ours)🔥</th>
