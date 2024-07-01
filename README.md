@@ -4,7 +4,7 @@
   <img src="docs/imgs/teaser1.png" width="30%" />
 </p>
 
-Pytorch implementation of paper [ParCo: Part-Coordinating Text-to-Motion Synthesis](https://arxiv.org/abs/2403.18512).
+Pytorch implementation of paper [ParCo: Part-Coordinating Text-to-Motion Synthesis](https://arxiv.org/abs/2403.18512) [ECCV 2024].
 
 [![Paper](http://img.shields.io/badge/Paper-arxiv.2403.18512-FF6B6B.svg)](https://arxiv.org/abs/2403.18512)
 [![Language](http://img.shields.io/badge/Language-中文-D6EAF8.svg)](./docs/README_zh.md)
